@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v24.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Promote, Track and Discover music with Play MPE®</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&#038;family=Open+Sans:ital,wght@0,300..800;1,300..800&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&#038;family=Open+Sans:ital,wght@0,300..800;1,300..800&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&#038;family=Open+Sans:ital,wght@0,300..800;1,300..800&#038;display=swap" /></noscript>
+	<meta name="description" content="Play MPE® is the music industry&#039;s solution to promote, discover and track music. Promote music securely to verified industry curators." />
+	<link rel="canonical" href="https://www.plaympe.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Promote, Track and Discover music with Play MPE®" />
+	<meta property="og:description" content="Play MPE® is the music industry&#039;s solution to promote, discover and track music. Promote music securely to verified industry curators." />
+	<meta property="og:url" content="https://www.plaympe.com/" />
+	<meta property="og:site_name" content="Play MPE" />
+	<meta property="article:modified_time" content="2025-01-24T21:27:03+00:00" />
+	<meta property="og:image" content="https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo.webp" />
+	<meta property="og:image:width" content="164" />
+	<meta property="og:image:height" content="29" />
+	<meta property="og:image:type" content="image/webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.plaympe.com/","url":"https://www.plaympe.com/","name":"Promote, Track and Discover music with Play MPE®","isPartOf":{"@id":"https://www.plaympe.com/#website"},"about":{"@id":"https://www.plaympe.com/#organization"},"datePublished":"2024-07-09T17:15:57+00:00","dateModified":"2025-01-24T21:27:03+00:00","description":"Play MPE® is the music industry's solution to promote, discover and track music. Promote music securely to verified industry curators.","breadcrumb":{"@id":"https://www.plaympe.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.plaympe.com/"]}]},{"@type":"BreadcrumbList","@id":"https://www.plaympe.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.plaympe.com/#website","url":"https://www.plaympe.com/","name":"Play MPE","description":"","publisher":{"@id":"https://www.plaympe.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.plaympe.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.plaympe.com/#organization","name":"Play MPE","url":"https://www.plaympe.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.plaympe.com/#/schema/logo/image/","url":"https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo.webp","contentUrl":"https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo.webp","width":164,"height":29,"caption":"Play MPE"},"image":{"@id":"https://www.plaympe.com/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='cm-bootstrap-style-css' href='https://www.plaympe.com/wp-content/cache/min/1/wp-content/themes/cybermark/assets/dist/css/main.css?ver=1738365779' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='child-style-css' href='https://www.plaympe.com/wp-content/cache/min/1/wp-content/themes/plaympe/assets/dist/css/main.css?ver=1738365779' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.plaympe.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="text/javascript" id="cookie-law-info-js-extra">
+/* <![CDATA[ */
+var _ckyConfig = {"_ipData":[],"_assetsURL":"https:\/\/www.plaympe.com\/wp-content\/plugins\/cookie-law-info\/lite\/frontend\/images\/","_publicURL":"https:\/\/www.plaympe.com","_expiry":"365","_categories":[{"name":"Necessary","slug":"necessary","isNecessary":true,"ccpaDoNotSell":true,"cookies":[],"active":true,"defaultConsent":{"gdpr":true,"ccpa":true}},{"name":"Functional","slug":"functional","isNecessary":false,"ccpaDoNotSell":true,"cookies":[],"active":true,"defaultConsent":{"gdpr":false,"ccpa":false}},{"name":"Analytics","slug":"analytics","isNecessary":false,"ccpaDoNotSell":true,"cookies":[],"active":true,"defaultConsent":{"gdpr":false,"ccpa":false}},{"name":"Performance","slug":"performance","isNecessary":false,"ccpaDoNotSell":true,"cookies":[],"active":true,"defaultConsent":{"gdpr":false,"ccpa":false}},{"name":"Advertisement","slug":"advertisement","isNecessary":false,"ccpaDoNotSell":true,"cookies":[],"active":true,"defaultConsent":{"gdpr":false,"ccpa":false}}],"_activeLaw":"gdpr","_rootDomain":"","_block":"1","_showBanner":"1","_bannerConfig":{"settings":{"type":"box","preferenceCenterType":"popup","position":"bottom-left","applicableLaw":"gdpr"},"behaviours":{"reloadBannerOnAccept":false,"loadAnalyticsByDefault":false,"animations":{"onLoad":"animate","onHide":"sticky"}},"config":{"revisitConsent":{"status":true,"tag":"revisit-consent","position":"bottom-left","meta":{"url":"#"},"styles":{"background-color":"#0056A7"},"elements":{"title":{"type":"text","tag":"revisit-consent-title","status":true,"styles":{"color":"#0056a7"}}}},"preferenceCenter":{"toggle":{"status":true,"tag":"detail-category-toggle","type":"toggle","states":{"active":{"styles":{"background-color":"#1863DC"}},"inactive":{"styles":{"background-color":"#D0D5D2"}}}}},"categoryPreview":{"status":false,"toggle":{"status":true,"tag":"detail-category-preview-toggle","type":"toggle","states":{"active":{"styles":{"background-color":"#1863DC"}},"inactive":{"styles":{"background-color":"#D0D5D2"}}}}},"videoPlaceholder":{"status":true,"styles":{"background-color":"#000000","border-color":"#000000","color":"#ffffff"}},"readMore":{"status":false,"tag":"readmore-button","type":"link","meta":{"noFollow":true,"newTab":true},"styles":{"color":"#1863DC","background-color":"transparent","border-color":"transparent"}},"auditTable":{"status":true},"optOption":{"status":true,"toggle":{"status":true,"tag":"optout-option-toggle","type":"toggle","states":{"active":{"styles":{"background-color":"#1863dc"}},"inactive":{"styles":{"background-color":"#FFFFFF"}}}}}}},"_version":"3.2.8","_logConsent":"1","_tags":[{"tag":"accept-button","styles":{"color":"#FFFFFF","background-color":"#1863DC","border-color":"#1863DC"}},{"tag":"reject-button","styles":{"color":"#1863DC","background-color":"transparent","border-color":"#1863DC"}},{"tag":"settings-button","styles":{"color":"#1863DC","background-color":"transparent","border-color":"#1863DC"}},{"tag":"readmore-button","styles":{"color":"#1863DC","background-color":"transparent","border-color":"transparent"}},{"tag":"donotsell-button","styles":{"color":"#1863DC","background-color":"transparent","border-color":"transparent"}},{"tag":"accept-button","styles":{"color":"#FFFFFF","background-color":"#1863DC","border-color":"#1863DC"}},{"tag":"revisit-consent","styles":{"background-color":"#0056A7"}}],"_shortCodes":[{"key":"cky_readmore","content":"<a href=\"#\" class=\"cky-policy\" aria-label=\"Cookie Policy\" target=\"_blank\" rel=\"noopener\" data-cky-tag=\"readmore-button\">Cookie Policy<\/a>","tag":"readmore-button","status":false,"attributes":{"rel":"nofollow","target":"_blank"}},{"key":"cky_show_desc","content":"<button class=\"cky-show-desc-btn\" data-cky-tag=\"show-desc-button\" aria-label=\"Show more\">Show more<\/button>","tag":"show-desc-button","status":true,"attributes":[]},{"key":"cky_hide_desc","content":"<button class=\"cky-show-desc-btn\" data-cky-tag=\"hide-desc-button\" aria-label=\"Show less\">Show less<\/button>","tag":"hide-desc-button","status":true,"attributes":[]},{"key":"cky_category_toggle_label","content":"[cky_{{status}}_category_label] [cky_preference_{{category_slug}}_title]","tag":"","status":true,"attributes":[]},{"key":"cky_enable_category_label","content":"Enable","tag":"","status":true,"attributes":[]},{"key":"cky_disable_category_label","content":"Disable","tag":"","status":true,"attributes":[]},{"key":"cky_video_placeholder","content":"<div class=\"video-placeholder-normal\" data-cky-tag=\"video-placeholder\" id=\"[UNIQUEID]\"><p class=\"video-placeholder-text-normal\" data-cky-tag=\"placeholder-title\">Please accept cookies to access this content<\/p><\/div>","tag":"","status":true,"attributes":[]},{"key":"cky_enable_optout_label","content":"Enable","tag":"","status":true,"attributes":[]},{"key":"cky_disable_optout_label","content":"Disable","tag":"","status":true,"attributes":[]},{"key":"cky_optout_toggle_label","content":"[cky_{{status}}_optout_label] [cky_optout_option_title]","tag":"","status":true,"attributes":[]},{"key":"cky_optout_option_title","content":"Do Not Sell or Share My Personal Information","tag":"","status":true,"attributes":[]},{"key":"cky_optout_close_label","content":"Close","tag":"","status":true,"attributes":[]}],"_rtl":"","_language":"en","_providersToBlock":[]};
+var _ckyStyles = {"css":".cky-overlay{background: #000000; opacity: 0.4; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999999;}.cky-hide{display: none;}.cky-btn-revisit-wrapper{display: flex; align-items: center; justify-content: center; background: #0056a7; width: 45px; height: 45px; border-radius: 50%; position: fixed; z-index: 999999; cursor: pointer;}.cky-revisit-bottom-left{bottom: 15px; left: 15px;}.cky-revisit-bottom-right{bottom: 15px; right: 15px;}.cky-btn-revisit-wrapper .cky-btn-revisit{display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; position: relative; margin: 0; padding: 0;}.cky-btn-revisit-wrapper .cky-btn-revisit img{max-width: fit-content; margin: 0; height: 30px; width: 30px;}.cky-revisit-bottom-left:hover::before{content: attr(data-tooltip); position: absolute; background: #4e4b66; color: #ffffff; left: calc(100% + 7px); font-size: 12px; line-height: 16px; width: max-content; padding: 4px 8px; border-radius: 4px;}.cky-revisit-bottom-left:hover::after{position: absolute; content: \"\"; border: 5px solid transparent; left: calc(100% + 2px); border-left-width: 0; border-right-color: #4e4b66;}.cky-revisit-bottom-right:hover::before{content: attr(data-tooltip); position: absolute; background: #4e4b66; color: #ffffff; right: calc(100% + 7px); font-size: 12px; line-height: 16px; width: max-content; padding: 4px 8px; border-radius: 4px;}.cky-revisit-bottom-right:hover::after{position: absolute; content: \"\"; border: 5px solid transparent; right: calc(100% + 2px); border-right-width: 0; border-left-color: #4e4b66;}.cky-revisit-hide{display: none;}.cky-consent-container{position: fixed; width: 440px; box-sizing: border-box; z-index: 9999999; border-radius: 6px;}.cky-consent-container .cky-consent-bar{background: #ffffff; border: 1px solid; padding: 20px 26px; box-shadow: 0 -1px 10px 0 #acabab4d; border-radius: 6px;}.cky-box-bottom-left{bottom: 40px; left: 40px;}.cky-box-bottom-right{bottom: 40px; right: 40px;}.cky-box-top-left{top: 40px; left: 40px;}.cky-box-top-right{top: 40px; right: 40px;}.cky-custom-brand-logo-wrapper .cky-custom-brand-logo{width: 100px; height: auto; margin: 0 0 12px 0;}.cky-notice .cky-title{color: #212121; font-weight: 700; font-size: 18px; line-height: 24px; margin: 0 0 12px 0;}.cky-notice-des *,.cky-preference-content-wrapper *,.cky-accordion-header-des *,.cky-gpc-wrapper .cky-gpc-desc *{font-size: 14px;}.cky-notice-des{color: #212121; font-size: 14px; line-height: 24px; font-weight: 400;}.cky-notice-des img{height: 25px; width: 25px;}.cky-consent-bar .cky-notice-des p,.cky-gpc-wrapper .cky-gpc-desc p,.cky-preference-body-wrapper .cky-preference-content-wrapper p,.cky-accordion-header-wrapper .cky-accordion-header-des p,.cky-cookie-des-table li div:last-child p{color: inherit; margin-top: 0; overflow-wrap: break-word;}.cky-notice-des P:last-child,.cky-preference-content-wrapper p:last-child,.cky-cookie-des-table li div:last-child p:last-child,.cky-gpc-wrapper .cky-gpc-desc p:last-child{margin-bottom: 0;}.cky-notice-des a.cky-policy,.cky-notice-des button.cky-policy{font-size: 14px; color: #1863dc; white-space: nowrap; cursor: pointer; background: transparent; border: 1px solid; text-decoration: underline;}.cky-notice-des button.cky-policy{padding: 0;}.cky-notice-des a.cky-policy:focus-visible,.cky-notice-des button.cky-policy:focus-visible,.cky-preference-content-wrapper .cky-show-desc-btn:focus-visible,.cky-accordion-header .cky-accordion-btn:focus-visible,.cky-preference-header .cky-btn-close:focus-visible,.cky-switch input[type=\"checkbox\"]:focus-visible,.cky-footer-wrapper a:focus-visible,.cky-btn:focus-visible{outline: 2px solid #1863dc; outline-offset: 2px;}.cky-btn:focus:not(:focus-visible),.cky-accordion-header .cky-accordion-btn:focus:not(:focus-visible),.cky-preference-content-wrapper .cky-show-desc-btn:focus:not(:focus-visible),.cky-btn-revisit-wrapper .cky-btn-revisit:focus:not(:focus-visible),.cky-preference-header .cky-btn-close:focus:not(:focus-visible),.cky-consent-bar .cky-banner-btn-close:focus:not(:focus-visible){outline: 0;}button.cky-show-desc-btn:not(:hover):not(:active){color: #1863dc; background: transparent;}button.cky-accordion-btn:not(:hover):not(:active),button.cky-banner-btn-close:not(:hover):not(:active),button.cky-btn-revisit:not(:hover):not(:active),button.cky-btn-close:not(:hover):not(:active){background: transparent;}.cky-consent-bar button:hover,.cky-modal.cky-modal-open button:hover,.cky-consent-bar button:focus,.cky-modal.cky-modal-open button:focus{text-decoration: none;}.cky-notice-btn-wrapper{display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; margin-top: 16px;}.cky-notice-btn-wrapper .cky-btn{text-shadow: none; box-shadow: none;}.cky-btn{flex: auto; max-width: 100%; font-size: 14px; font-family: inherit; line-height: 24px; padding: 8px; font-weight: 500; margin: 0 8px 0 0; border-radius: 2px; cursor: pointer; text-align: center; text-transform: none; min-height: 0;}.cky-btn:hover{opacity: 0.8;}.cky-btn-customize{color: #1863dc; background: transparent; border: 2px solid #1863dc;}.cky-btn-reject{color: #1863dc; background: transparent; border: 2px solid #1863dc;}.cky-btn-accept{background: #1863dc; color: #ffffff; border: 2px solid #1863dc;}.cky-btn:last-child{margin-right: 0;}@media (max-width: 576px){.cky-box-bottom-left{bottom: 0; left: 0;}.cky-box-bottom-right{bottom: 0; right: 0;}.cky-box-top-left{top: 0; left: 0;}.cky-box-top-right{top: 0; right: 0;}}@media (max-width: 440px){.cky-box-bottom-left, .cky-box-bottom-right, .cky-box-top-left, .cky-box-top-right{width: 100%; max-width: 100%;}.cky-consent-container .cky-consent-bar{padding: 20px 0;}.cky-custom-brand-logo-wrapper, .cky-notice .cky-title, .cky-notice-des, .cky-notice-btn-wrapper{padding: 0 24px;}.cky-notice-des{max-height: 40vh; overflow-y: scroll;}.cky-notice-btn-wrapper{flex-direction: column; margin-top: 0;}.cky-btn{width: 100%; margin: 10px 0 0 0;}.cky-notice-btn-wrapper .cky-btn-customize{order: 2;}.cky-notice-btn-wrapper .cky-btn-reject{order: 3;}.cky-notice-btn-wrapper .cky-btn-accept{order: 1; margin-top: 16px;}}@media (max-width: 352px){.cky-notice .cky-title{font-size: 16px;}.cky-notice-des *{font-size: 12px;}.cky-notice-des, .cky-btn{font-size: 12px;}}.cky-modal.cky-modal-open{display: flex; visibility: visible; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); top: 50%; left: 50%; transition: all 1s ease;}.cky-modal{box-shadow: 0 32px 68px rgba(0, 0, 0, 0.3); margin: 0 auto; position: fixed; max-width: 100%; background: #ffffff; top: 50%; box-sizing: border-box; border-radius: 6px; z-index: 999999999; color: #212121; -webkit-transform: translate(-50%, 100%); -moz-transform: translate(-50%, 100%); -ms-transform: translate(-50%, 100%); -o-transform: translate(-50%, 100%); transform: translate(-50%, 100%); visibility: hidden; transition: all 0s ease;}.cky-preference-center{max-height: 79vh; overflow: hidden; width: 845px; overflow: hidden; flex: 1 1 0; display: flex; flex-direction: column; border-radius: 6px;}.cky-preference-header{display: flex; align-items: center; justify-content: space-between; padding: 22px 24px; border-bottom: 1px solid;}.cky-preference-header .cky-preference-title{font-size: 18px; font-weight: 700; line-height: 24px;}.cky-preference-header .cky-btn-close{margin: 0; cursor: pointer; vertical-align: middle; padding: 0; background: none; border: none; width: auto; height: auto; min-height: 0; line-height: 0; text-shadow: none; box-shadow: none;}.cky-preference-header .cky-btn-close img{margin: 0; height: 10px; width: 10px;}.cky-preference-body-wrapper{padding: 0 24px; flex: 1; overflow: auto; box-sizing: border-box;}.cky-preference-content-wrapper,.cky-gpc-wrapper .cky-gpc-desc{font-size: 14px; line-height: 24px; font-weight: 400; padding: 12px 0;}.cky-preference-content-wrapper{border-bottom: 1px solid;}.cky-preference-content-wrapper img{height: 25px; width: 25px;}.cky-preference-content-wrapper .cky-show-desc-btn{font-size: 14px; font-family: inherit; color: #1863dc; text-decoration: none; line-height: 24px; padding: 0; margin: 0; white-space: nowrap; cursor: pointer; background: transparent; border-color: transparent; text-transform: none; min-height: 0; text-shadow: none; box-shadow: none;}.cky-accordion-wrapper{margin-bottom: 10px;}.cky-accordion{border-bottom: 1px solid;}.cky-accordion:last-child{border-bottom: none;}.cky-accordion .cky-accordion-item{display: flex; margin-top: 10px;}.cky-accordion .cky-accordion-body{display: none;}.cky-accordion.cky-accordion-active .cky-accordion-body{display: block; padding: 0 22px; margin-bottom: 16px;}.cky-accordion-header-wrapper{cursor: pointer; width: 100%;}.cky-accordion-item .cky-accordion-header{display: flex; justify-content: space-between; align-items: center;}.cky-accordion-header .cky-accordion-btn{font-size: 16px; font-family: inherit; color: #212121; line-height: 24px; background: none; border: none; font-weight: 700; padding: 0; margin: 0; cursor: pointer; text-transform: none; min-height: 0; text-shadow: none; box-shadow: none;}.cky-accordion-header .cky-always-active{color: #008000; font-weight: 600; line-height: 24px; font-size: 14px;}.cky-accordion-header-des{font-size: 14px; line-height: 24px; margin: 10px 0 16px 0;}.cky-accordion-chevron{margin-right: 22px; position: relative; cursor: pointer;}.cky-accordion-chevron-hide{display: none;}.cky-accordion .cky-accordion-chevron i::before{content: \"\"; position: absolute; border-right: 1.4px solid; border-bottom: 1.4px solid; border-color: inherit; height: 6px; width: 6px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); transition: all 0.2s ease-in-out; top: 8px;}.cky-accordion.cky-accordion-active .cky-accordion-chevron i::before{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);}.cky-audit-table{background: #f4f4f4; border-radius: 6px;}.cky-audit-table .cky-empty-cookies-text{color: inherit; font-size: 12px; line-height: 24px; margin: 0; padding: 10px;}.cky-audit-table .cky-cookie-des-table{font-size: 12px; line-height: 24px; font-weight: normal; padding: 15px 10px; border-bottom: 1px solid; border-bottom-color: inherit; margin: 0;}.cky-audit-table .cky-cookie-des-table:last-child{border-bottom: none;}.cky-audit-table .cky-cookie-des-table li{list-style-type: none; display: flex; padding: 3px 0;}.cky-audit-table .cky-cookie-des-table li:first-child{padding-top: 0;}.cky-cookie-des-table li div:first-child{width: 100px; font-weight: 600; word-break: break-word; word-wrap: break-word;}.cky-cookie-des-table li div:last-child{flex: 1; word-break: break-word; word-wrap: break-word; margin-left: 8px;}.cky-footer-shadow{display: block; width: 100%; height: 40px; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%); position: absolute; bottom: calc(100% - 1px);}.cky-footer-wrapper{position: relative;}.cky-prefrence-btn-wrapper{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 22px 24px; border-top: 1px solid;}.cky-prefrence-btn-wrapper .cky-btn{flex: auto; max-width: 100%; text-shadow: none; box-shadow: none;}.cky-btn-preferences{color: #1863dc; background: transparent; border: 2px solid #1863dc;}.cky-preference-header,.cky-preference-body-wrapper,.cky-preference-content-wrapper,.cky-accordion-wrapper,.cky-accordion,.cky-accordion-wrapper,.cky-footer-wrapper,.cky-prefrence-btn-wrapper{border-color: inherit;}@media (max-width: 845px){.cky-modal{max-width: calc(100% - 16px);}}@media (max-width: 576px){.cky-modal{max-width: 100%;}.cky-preference-center{max-height: 100vh;}.cky-prefrence-btn-wrapper{flex-direction: column;}.cky-accordion.cky-accordion-active .cky-accordion-body{padding-right: 0;}.cky-prefrence-btn-wrapper .cky-btn{width: 100%; margin: 10px 0 0 0;}.cky-prefrence-btn-wrapper .cky-btn-reject{order: 3;}.cky-prefrence-btn-wrapper .cky-btn-accept{order: 1; margin-top: 0;}.cky-prefrence-btn-wrapper .cky-btn-preferences{order: 2;}}@media (max-width: 425px){.cky-accordion-chevron{margin-right: 15px;}.cky-notice-btn-wrapper{margin-top: 0;}.cky-accordion.cky-accordion-active .cky-accordion-body{padding: 0 15px;}}@media (max-width: 352px){.cky-preference-header .cky-preference-title{font-size: 16px;}.cky-preference-header{padding: 16px 24px;}.cky-preference-content-wrapper *, .cky-accordion-header-des *{font-size: 12px;}.cky-preference-content-wrapper, .cky-preference-content-wrapper .cky-show-more, .cky-accordion-header .cky-always-active, .cky-accordion-header-des, .cky-preference-content-wrapper .cky-show-desc-btn, .cky-notice-des a.cky-policy{font-size: 12px;}.cky-accordion-header .cky-accordion-btn{font-size: 14px;}}.cky-switch{display: flex;}.cky-switch input[type=\"checkbox\"]{position: relative; width: 44px; height: 24px; margin: 0; background: #d0d5d2; -webkit-appearance: none; border-radius: 50px; cursor: pointer; outline: 0; border: none; top: 0;}.cky-switch input[type=\"checkbox\"]:checked{background: #1863dc;}.cky-switch input[type=\"checkbox\"]:before{position: absolute; content: \"\"; height: 20px; width: 20px; left: 2px; bottom: 2px; border-radius: 50%; background-color: white; -webkit-transition: 0.4s; transition: 0.4s; margin: 0;}.cky-switch input[type=\"checkbox\"]:after{display: none;}.cky-switch input[type=\"checkbox\"]:checked:before{-webkit-transform: translateX(20px); -ms-transform: translateX(20px); transform: translateX(20px);}@media (max-width: 425px){.cky-switch input[type=\"checkbox\"]{width: 38px; height: 21px;}.cky-switch input[type=\"checkbox\"]:before{height: 17px; width: 17px;}.cky-switch input[type=\"checkbox\"]:checked:before{-webkit-transform: translateX(17px); -ms-transform: translateX(17px); transform: translateX(17px);}}.cky-consent-bar .cky-banner-btn-close{position: absolute; right: 9px; top: 5px; background: none; border: none; cursor: pointer; padding: 0; margin: 0; min-height: 0; line-height: 0; height: auto; width: auto; text-shadow: none; box-shadow: none;}.cky-consent-bar .cky-banner-btn-close img{height: 9px; width: 9px; margin: 0;}.cky-notice-group{font-size: 14px; line-height: 24px; font-weight: 400; color: #212121;}.cky-notice-btn-wrapper .cky-btn-do-not-sell{font-size: 14px; line-height: 24px; padding: 6px 0; margin: 0; font-weight: 500; background: none; border-radius: 2px; border: none; cursor: pointer; text-align: left; color: #1863dc; background: transparent; border-color: transparent; box-shadow: none; text-shadow: none;}.cky-consent-bar .cky-banner-btn-close:focus-visible,.cky-notice-btn-wrapper .cky-btn-do-not-sell:focus-visible,.cky-opt-out-btn-wrapper .cky-btn:focus-visible,.cky-opt-out-checkbox-wrapper input[type=\"checkbox\"].cky-opt-out-checkbox:focus-visible{outline: 2px solid #1863dc; outline-offset: 2px;}@media (max-width: 440px){.cky-consent-container{width: 100%;}}@media (max-width: 352px){.cky-notice-des a.cky-policy, .cky-notice-btn-wrapper .cky-btn-do-not-sell{font-size: 12px;}}.cky-opt-out-wrapper{padding: 12px 0;}.cky-opt-out-wrapper .cky-opt-out-checkbox-wrapper{display: flex; align-items: center;}.cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{font-size: 16px; font-weight: 700; line-height: 24px; margin: 0 0 0 12px; cursor: pointer;}.cky-opt-out-checkbox-wrapper input[type=\"checkbox\"].cky-opt-out-checkbox{background-color: #ffffff; border: 1px solid black; width: 20px; height: 18.5px; margin: 0; -webkit-appearance: none; position: relative; display: flex; align-items: center; justify-content: center; border-radius: 2px; cursor: pointer;}.cky-opt-out-checkbox-wrapper input[type=\"checkbox\"].cky-opt-out-checkbox:checked{background-color: #1863dc; border: none;}.cky-opt-out-checkbox-wrapper input[type=\"checkbox\"].cky-opt-out-checkbox:checked::after{left: 6px; bottom: 4px; width: 7px; height: 13px; border: solid #ffffff; border-width: 0 3px 3px 0; border-radius: 2px; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); content: \"\"; position: absolute; box-sizing: border-box;}.cky-opt-out-checkbox-wrapper.cky-disabled .cky-opt-out-checkbox-label,.cky-opt-out-checkbox-wrapper.cky-disabled input[type=\"checkbox\"].cky-opt-out-checkbox{cursor: no-drop;}.cky-gpc-wrapper{margin: 0 0 0 32px;}.cky-footer-wrapper .cky-opt-out-btn-wrapper{display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 22px 24px;}.cky-opt-out-btn-wrapper .cky-btn{flex: auto; max-width: 100%; text-shadow: none; box-shadow: none;}.cky-opt-out-btn-wrapper .cky-btn-cancel{border: 1px solid #dedfe0; background: transparent; color: #858585;}.cky-opt-out-btn-wrapper .cky-btn-confirm{background: #1863dc; color: #ffffff; border: 1px solid #1863dc;}@media (max-width: 352px){.cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{font-size: 14px;}.cky-gpc-wrapper .cky-gpc-desc, .cky-gpc-wrapper .cky-gpc-desc *{font-size: 12px;}.cky-opt-out-checkbox-wrapper input[type=\"checkbox\"].cky-opt-out-checkbox{width: 16px; height: 16px;}.cky-opt-out-checkbox-wrapper input[type=\"checkbox\"].cky-opt-out-checkbox:checked::after{left: 5px; bottom: 4px; width: 3px; height: 9px;}.cky-gpc-wrapper{margin: 0 0 0 28px;}}.video-placeholder-youtube{background-size: 100% 100%; background-position: center; background-repeat: no-repeat; background-color: #b2b0b059; position: relative; display: flex; align-items: center; justify-content: center; max-width: 100%;}.video-placeholder-text-youtube{text-align: center; align-items: center; padding: 10px 16px; background-color: #000000cc; color: #ffffff; border: 1px solid; border-radius: 2px; cursor: pointer;}.video-placeholder-normal{background-image: url(\"\/wp-content\/plugins\/cookie-law-info\/lite\/frontend\/images\/placeholder.svg\"); background-size: 80px; background-position: center; background-repeat: no-repeat; background-color: #b2b0b059; position: relative; display: flex; align-items: flex-end; justify-content: center; max-width: 100%;}.video-placeholder-text-normal{align-items: center; padding: 10px 16px; text-align: center; border: 1px solid; border-radius: 2px; cursor: pointer;}.cky-rtl{direction: rtl; text-align: right;}.cky-rtl .cky-banner-btn-close{left: 9px; right: auto;}.cky-rtl .cky-notice-btn-wrapper .cky-btn:last-child{margin-right: 8px;}.cky-rtl .cky-notice-btn-wrapper .cky-btn:first-child{margin-right: 0;}.cky-rtl .cky-notice-btn-wrapper{margin-left: 0; margin-right: 15px;}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn{margin-right: 8px;}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn:first-child{margin-right: 0;}.cky-rtl .cky-accordion .cky-accordion-chevron i::before{border: none; border-left: 1.4px solid; border-top: 1.4px solid; left: 12px;}.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-chevron i::before{-webkit-transform: rotate(-135deg); -moz-transform: rotate(-135deg); -ms-transform: rotate(-135deg); -o-transform: rotate(-135deg); transform: rotate(-135deg);}@media (max-width: 768px){.cky-rtl .cky-notice-btn-wrapper{margin-right: 0;}}@media (max-width: 576px){.cky-rtl .cky-notice-btn-wrapper .cky-btn:last-child{margin-right: 0;}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn{margin-right: 0;}.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-body{padding: 0 22px 0 0;}}@media (max-width: 425px){.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-body{padding: 0 15px 0 0;}}.cky-rtl .cky-opt-out-btn-wrapper .cky-btn{margin-right: 12px;}.cky-rtl .cky-opt-out-btn-wrapper .cky-btn:first-child{margin-right: 0;}.cky-rtl .cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{margin: 0 12px 0 0;}"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.plaympe.com/wp-content/plugins/cookie-law-info/lite/frontend/js/script.min.js?ver=3.2.8" id="cookie-law-info-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.plaympe.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.plaympe.com/wp-json/wp/v2/pages/8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.plaympe.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.6.2" />
+<link rel='shortlink' href='https://www.plaympe.com/' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.plaympe.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.plaympe.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.plaympe.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.plaympe.com%2F&#038;format=xml" />
+<style id="cky-style-inline">[data-cky-tag]{visibility:hidden;}</style>  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+<link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//google-analytics.com">
+<link rel="dns-prefetch" href="//googletagmanager.com">
+<link rel="dns-prefetch" href="//googleadservices.com">
+<link rel="dns-prefetch" href="//maps.googleapis.com">
+<link rel="dns-prefetch" href="//use.typekit.net">
+<link rel="dns-prefetch" href="//use.fontawesome.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="//maps.gstatic.com">
+<link rel="dns-prefetch" href="//google.ca">
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+<link rel="dns-prefetch" href="//3663027.fls.doubleclick.net">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//c.sharethis.mgr.consensu.org">
+<link rel="dns-prefetch" href="//scontent-lga3-2.xx.fbcdn.net">
+<link rel="dns-prefetch" href="//s.w.org">
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript" async>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6KKPHH');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-2NHR9DESHV"></script>
+<script type="rocketlazyloadscript" async>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2NHR9DESHV');
+</script>
+
+<style>
+.grecaptcha-badge {
+  display: none !important;
+}
+</style>	
+	<link rel="preconnect"
+		href="https://fonts.gstatic.com"
+		crossorigin />
+
+	
+
+	
+
+	<noscript>
+		
+	</noscript>
+<link rel="alternate" hreflang="en" href="https://www.plaympe.com" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript> 
+	
+
+	<link rel="preconnect" href="https://googleads.g.doubleclick.net">
+	<link rel="preconnect" href="https://td.doubleclick.net">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+</head>
+
+<body class="home page-template-default page page-id-8 main-site">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6KKPHH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+	
+	<div class="region-bar">
+		<img width="512" height="512" id="globe-image" onclick="toggleRegion()" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" alt="Globe Icon" data-lazy-src="https://www.plaympe.com/wp-content/themes/plaympe/assets/images/globe-icon-white.webp"><noscript><img width="512" height="512" id="globe-image" onclick="toggleRegion()" src="https://www.plaympe.com/wp-content/themes/plaympe/assets/images/globe-icon-white.webp" alt="Globe Icon"></noscript>
+		<ul id="region-list" style="display: none;">
+			<li><a href='https://www.plaympe.com'>EN</a></li><li><a href='https://www.plaympe.com/es'>ES</a></li>		</ul>
+	</div>
+
+<header class="header"  >
+	<div class="container-fluid">
+		<div class="row flex-wrap align-items-center header-row">
+			<div class="col-6 col-lg-2 mb-2 mb-md-0">
+				<div class="main-logo">
+					<a href="https://www.plaympe.com/" rel="home" title="Play MPE">
+									              <img id="business_logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20164%2029'%3E%3C/svg%3E" alt="Play MPE logo"  height="29" width="164" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo.webp"/><noscript><img id="business_logo" src="https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo.webp" alt="Play MPE logo"  height="29" width="164"/></noscript>
+			            
+			             
+					</a>
+				</div>
+			</div>
+
+			<nav id="site-navigation" class="main-navigation navbar navbar-expand-lg col-lg-7 col-auto p-0" >
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+		
+
+				<div id="navbarNavDropdown" class="collapse navbar-collapse" >
+					<ul  class="nav navbar-nav primary-menu">
+						<li  id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28 nav-item"><a href="https://www.plaympe.com/promote/" class="nav-link">Promote</a></li>
+<li  id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 nav-item"><a href="https://www.plaympe.com/discover/" class="nav-link">Discover</a></li>
+<li  id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 nav-item"><a href="https://www.plaympe.com/track/" class="nav-link">Track</a></li>
+<li  id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31 nav-item"><a href="/charts/" class="nav-link">Charts</a></li>
+<li  id="menu-item-33" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-has-children dropdown active menu-item-33 nav-item"><a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-33" aria-current="page">Company</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-33">
+	<li  id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34 nav-item"><a href="https://www.plaympe.com/about/" class="dropdown-item">About</a></li>
+	<li  id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36 nav-item"><a target="_blank" rel="noopener noreferrer" href="https://investors.dsny.com/" class="dropdown-item">Investors</a></li>
+	<li  id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35 nav-item"><a href="https://www.plaympe.com/testimonials/" class="dropdown-item">Testimonials</a></li>
+	<li  id="menu-item-37" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37 nav-item"><a target="_blank" rel="noopener noreferrer" href="https://support.plaympe.com/portal/en/kb/plaympe" class="dropdown-item">Support</a></li>
+</ul>
+</li>
+<li  id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 nav-item"><a href="https://www.plaympe.com/blog/" class="nav-link">Blog</a></li>
+						<div class="mobile-modal-btns">
+							<div class="widget_text "><div class="textwidget custom-html-widget"><button class="btn btn-secondary signin-btn" data-bs-toggle="modal" data-bs-target="#signin-popup">Sign In</button>
+<button class="btn btn-primary signup-btn" data-bs-toggle="modal" data-bs-target="#getstarted-popup">Get Started</button></div></div>						</div>
+					</ul>
+				</div>
+					
+				
+				
+			</nav>
+			
+			
+			<div class="col-6 col-lg-3 text-end ">
+				<div class="header-button h-100 align-items-center d-flex justify-content-end">
+																				<div class="widget_text "><div class="textwidget custom-html-widget"><button class="btn btn-secondary signin-btn" data-bs-toggle="modal" data-bs-target="#signin-popup">Sign In</button>
+<button class="btn btn-primary signup-btn" data-bs-toggle="modal" data-bs-target="#getstarted-popup">Get Started</button></div></div>																</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<main id="main_content" >
+		<div id="content" class="main-content">
+<div class="wrap">
+	
+
+<section class="content_2 section__wrapper first-block grey-map btn-primary-promote cookie-track"  >
+	<div class="container">
+		<div class="row align-items-center flex-row-reverse">
+			
+						<div class="col-md-6">
+				<div class="section__img" >
+					<div class="section_img_wrapper">
+						
+						<img width="700" height="419" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20419'%3E%3C/svg%3E" class="attachment-large size-large" alt="" decoding="async" fetchpriority="high" data-lazy-srcset="https://www.plaympe.com/wp-content/uploads/2024/11/Home-Page-PromoteTrackDiscover.webp 700w, https://www.plaympe.com/wp-content/uploads/2024/11/Home-Page-PromoteTrackDiscover-300x180.webp 300w" data-lazy-sizes="(max-width: 700px) 100vw, 700px" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/11/Home-Page-PromoteTrackDiscover.webp" /><noscript><img width="700" height="419" src="https://www.plaympe.com/wp-content/uploads/2024/11/Home-Page-PromoteTrackDiscover.webp" class="attachment-large size-large" alt="" decoding="async" fetchpriority="high" srcset="https://www.plaympe.com/wp-content/uploads/2024/11/Home-Page-PromoteTrackDiscover.webp 700w, https://www.plaympe.com/wp-content/uploads/2024/11/Home-Page-PromoteTrackDiscover-300x180.webp 300w" sizes="(max-width: 700px) 100vw, 700px" /></noscript>						<!-- <img src="" alt="" height="" width=""  loading="lazy" /> -->
+					
+					</div>
+				</div>
+			</div>
+						<div class="col-md-6 mt-5 mt-md-0">
+				<div class="section__container" >
+					<div class="section__content ">
+						<h1>The music industry’s solution to promote, discover and track music</h1>
+<p>Promoters, artists and record labels promote music securely to verified industry curators, and <a href="https://www.plaympe.com/track/"> track airplay</a> to access real-time radio reporting. Professional music curators <a href="https://www.plaympe.com/discover/">discover</a> the latest releases from major labels and independents.</p>
+						
+													<div class="section__button text-left">
+																	<a class="btn btn-primary" href="https://caster.plaympe.com/#/auth/signup" title="Promote Music Link" target="_blank">Promote Music</a>	
+									
+															</div>
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+
+<section class="feature_2 section__wrapper light-features pb-0"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="row ">
+						<div class="col-md-12 mb-5">
+				<div class="section__container">
+					<div class="section__content ">
+						<p><img decoding="async" class="alignnone size-full wp-image-54 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2094'%3E%3C/svg%3E" alt="Play MPE Caster Logo" width="200" height="94" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/caster-logo.webp" /><noscript><img decoding="async" class="alignnone size-full wp-image-54 aligncenter" src="https://www.plaympe.com/wp-content/uploads/2024/07/caster-logo.webp" alt="Play MPE Caster Logo" width="200" height="94" /></noscript></p>
+<h2 style="text-align: center;">Send your releases to the music industry’s top curators</h2>
+					</div>
+				</div>
+			</div>
+						<div class="col-md-12">
+										<div class="row justify-content-center">
+							
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3C/svg%3E" height="64" width="64" alt="Promociona tu música a profesionales de la radio, cine, tv, media y más con Caster" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/audio_file_caster-white-e1738972005336.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/audio_file_caster-white-e1738972005336.webp" height="64" width="64" alt="Promociona tu música a profesionales de la radio, cine, tv, media y más con Caster" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Upload Music</h3>
+<p style="text-align: center;">Upload broadcast ready music files (mixed &amp; mastered WAV/AIFF) and artwork. Input song information, and all essential metadata for your release.</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" height="96" width="96" alt="feature-image-2" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/playlist_add_check_caster.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/playlist_add_check_caster.webp" height="96" width="96" alt="feature-image-2" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Create Promotion</h3>
+<p style="text-align: center;">Build professional music promotion campaigns that get noticed. Include your press release, artist bio, promo photos, music video, tour dates, contact information and more.</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3C/svg%3E" height="64" width="64" alt="Promociona tu música a curadores musicales con Caster" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/radio_caster-white-e1738972207766.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/radio_caster-white-e1738972207766.webp" height="64" width="64" alt="Promociona tu música a curadores musicales con Caster" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Distribute and Export</h3>
+<p style="text-align: center;">Play MPE’s promotion packages cover all music formats and genres. Distribute your release to verified music curators internationally or select lists a la carte per music market. Export your release from Caster to MTR for radio tracking.</p>
+																					</div>
+																				
+									</div>
+								</div>
+														</div>
+								</div>
+		</div>
+			</section>
+<section class="gallery_2 section__wrapper pb-0"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="section__container">
+			<div class="section__content">
+				<h2 style="text-align: center;">Promote with Caster</h2>
+			</div>
+		</div>
+					<div class="gallery__slider gallery__slider_1">
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-1--scaled-e1737753520649.jpg" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201702%201211'%3E%3C/svg%3E" alt="Promote Music Caster Step 1"  height="1211" width="1702" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-1--scaled-e1737753520649.jpg"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-1--scaled-e1737753520649.jpg" alt="Promote Music Caster Step 1"  height="1211" width="1702" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-2-scaled-e1737753562959.jpg" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202474%201702'%3E%3C/svg%3E" alt=""  height="1702" width="2474" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-2-scaled-e1737753562959.jpg"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-2-scaled-e1737753562959.jpg" alt=""  height="1702" width="2474" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-3-scaled-e1737753600422.jpg" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202414%201702'%3E%3C/svg%3E" alt=""  height="1702" width="2414" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-3-scaled-e1737753600422.jpg"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-3-scaled-e1737753600422.jpg" alt=""  height="1702" width="2414" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-4--scaled-e1737753636779.jpg" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202336%201702'%3E%3C/svg%3E" alt="Promote Music Caster Step 4"  height="1702" width="2336" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-4--scaled-e1737753636779.jpg"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Promote-Music-Step-4--scaled-e1737753636779.jpg" alt="Promote Music Caster Step 4"  height="1702" width="2336" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+							</div>
+
+						
+			</div>
+</section>
+
+
+<section class="content_1 section__wrapper btn-primary-promote"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="row align-items-center ">
+			
+						<div class="col-md-12">
+				<div class="section__container" >
+					<div class="section__content ">
+						<h3 class="h3" style="text-align: center;">Promote your music to verified industry curators</h3>
+						
+													<div class="section__button text-center">
+																	<a class="btn btn-primary" href="https://www.plaympe.com/promote/" title="Promote music Link" target="_self">Promote music</a>	
+									
+															</div>
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+
+<section class="feature_2 section__wrapper dark-features pb-0"  style="background-color: #1c1c1c;">
+	<div class="container">
+		<div class="row ">
+						<div class="col-md-12 mb-5">
+				<div class="section__container">
+					<div class="section__content ">
+						<p><img decoding="async" class="aligncenter wp-image-70 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2096'%3E%3C/svg%3E" alt="Play MPE Player Logo" width="200" height="96" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/player-logo.webp" /><noscript><img decoding="async" class="aligncenter wp-image-70 size-full" src="https://www.plaympe.com/wp-content/uploads/2024/07/player-logo.webp" alt="Play MPE Player Logo" width="200" height="96" /></noscript></p>
+<h2 style="text-align: center;">Discover the latest music from major labels and independents in the formats you want</h2>
+					</div>
+				</div>
+			</div>
+						<div class="col-md-12">
+										<div class="row justify-content-center">
+							
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" height="96" width="96" alt="setting logo" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/tune_player.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/tune_player.webp" height="96" width="96" alt="setting logo" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Curate By Format</h3>
+<p style="text-align: center;">Get your music into the ears of real decision-makers in radio, music supervision, media, music curation (retail, restaurants, airlines), blogs, A&amp;R and more…</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" height="96" width="96" alt="download logo" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/download.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/download.webp" height="96" width="96" alt="download logo" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Download Files And Metadata</h3>
+<p style="text-align: center;">Everything professional music curators need. Broadcast ready music files, songwriter splits, ISRCs, publisher info and more.</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" height="96" width="96" alt="add post logo" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/post_add.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/post_add.webp" height="96" width="96" alt="add post logo" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Access Assets</h3>
+<p style="text-align: center;">Download promotional assets from a secure library that never expires Artist bios, promo photos, press releases, and album artwork.</p>
+																					</div>
+																				
+									</div>
+								</div>
+														</div>
+								</div>
+		</div>
+			</section>
+<section class="gallery_2 section__wrapper dark-gallery pb-0 dark-bg"  style="background-color: #1c1c1c;">
+	<div class="container">
+		<div class="section__container">
+			<div class="section__content">
+				<h2 style="text-align: center;">Discover with Player</h2>
+			</div>
+		</div>
+					<div class="gallery__slider gallery__slider_1">
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library.png" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202880%202048'%3E%3C/svg%3E" alt="Player Music Library for Music Industry"  height="2048" width="2880" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library.png"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library.png" alt="Player Music Library for Music Industry"  height="2048" width="2880" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-Tracklist.png" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202880%202048'%3E%3C/svg%3E" alt="Music Library for Music Industry Tracklist"  height="2048" width="2880" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-Tracklist.png"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-Tracklist.png" alt="Music Library for Music Industry Tracklist"  height="2048" width="2880" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-Song-Info.png" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202880%202048'%3E%3C/svg%3E" alt="Music Library for Music Industry Song Info"  height="2048" width="2880" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-Song-Info.png"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-Song-Info.png" alt="Music Library for Music Industry Song Info"  height="2048" width="2880" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-File-Sharing.png" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202880%202048'%3E%3C/svg%3E" alt="Player Music Library File Sharing"  height="2048" width="2880" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-File-Sharing.png"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2025/01/Player-Music-Library-File-Sharing.png" alt="Player Music Library File Sharing"  height="2048" width="2880" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+							</div>
+
+						
+			</div>
+</section>
+
+
+<section class="content_1 section__wrapper btn-primary-discover dark-bg"  style="background-color: #1c1c1c;">
+	<div class="container">
+		<div class="row align-items-center ">
+			
+						<div class="col-md-12">
+				<div class="section__container" >
+					<div class="section__content ">
+						<h3 class="h3" style="text-align: center;">Learn More about accessing and discovering the latest releases</h3>
+						
+													<div class="section__button text-center">
+																	<a class="btn btn-primary" href="https://www.plaympe.com/discover/" title="Discover Music Link" target="_self">Discover Music</a>	
+									
+															</div>
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+
+<section class="feature_2 section__wrapper light-features pb-0"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="row ">
+						<div class="col-md-12 mb-5">
+				<div class="section__container">
+					<div class="section__content ">
+						<p><img decoding="async" class="alignnone size-full wp-image-78 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20109'%3E%3C/svg%3E" alt="MTR Radio Tracking Logo" width="200" height="109" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/MTRlogo.webp" /><noscript><img decoding="async" class="alignnone size-full wp-image-78 aligncenter" src="https://www.plaympe.com/wp-content/uploads/2024/07/MTRlogo.webp" alt="MTR Radio Tracking Logo" width="200" height="109" /></noscript></p>
+<h2 style="text-align: center;">Track your radio airplay in real-time</h2>
+					</div>
+				</div>
+			</div>
+						<div class="col-md-12">
+										<div class="row justify-content-center">
+							
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" height="96" width="96" alt="upload file logo" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/upload_file.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/upload_file.webp" height="96" width="96" alt="upload file logo" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Import/Upload song(s)</h3>
+<p style="text-align: center;">Import songs from a promotional release in Caster to MTR. Or upload songs directly to MTR for fingerprinting and input song information. MTR accepts WAV, AIF, AIFF, MP3, M4A, WMA or OGG.</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3C/svg%3E" height="64" width="64" alt="Rastrea o Monitorea tus canciones en la radio en MTR con planes accesibles" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/analytics_MTR-e1738972252447.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/analytics_MTR-e1738972252447.webp" height="64" width="64" alt="Rastrea o Monitorea tus canciones en la radio en MTR con planes accesibles" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">Select Tracking Plan</h3>
+<p style="text-align: center;">Select a price plan for each uploaded song you want to track airplay for. Choose from 1, 3 or 6 months. At least 3 months is recommended.</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3C/svg%3E" height="64" width="64" alt="Rastrea o Monitorea tus canciones con MTR" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/timeline_MTR-e1738972263142.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/timeline_MTR-e1738972263142.webp" height="64" width="64" alt="Rastrea o Monitorea tus canciones con MTR" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<h3 style="text-align: center;">View Real-time Reporting</h3>
+<p style="text-align: center;">Learn when and where your music is getting airplay, in real-time. View an all-time overview, or filter to see your spins by selected time period and compare.</p>
+																					</div>
+																				
+									</div>
+								</div>
+														</div>
+								</div>
+		</div>
+			</section>
+<section class="gallery_2 section__wrapper pb-0"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="section__container">
+			<div class="section__content">
+				<h2 style="text-align: center;">Track with MTR</h2>
+			</div>
+		</div>
+					<div class="gallery__slider gallery__slider_1">
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2024/08/Dsahboard.webp" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201518%201079'%3E%3C/svg%3E" alt="MTR Dashboard"  height="1079" width="1518" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/08/Dsahboard.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/08/Dsahboard.webp" alt="MTR Dashboard"  height="1079" width="1518" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2024/07/MTR-Product-2-2.webp" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201067'%3E%3C/svg%3E" alt="MTR Dashboard Radio Stations"  height="1067" width="1500" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/MTR-Product-2-2.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/MTR-Product-2-2.webp" alt="MTR Dashboard Radio Stations"  height="1067" width="1500" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+								<div class="gallery__item ml-1 mr-1">
+					<div class="column gallery_2_column mb-0">
+						<div class="column-img mb-0 gallery_img">
+	                		<a data-fancybox="gallery2" href="https://www.plaympe.com/wp-content/uploads/2024/08/MTR-Product.webp" >
+								<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201518%201079'%3E%3C/svg%3E" alt="MTR Dashboard Spins"  height="1079" width="1518" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/08/MTR-Product.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/08/MTR-Product.webp" alt="MTR Dashboard Spins"  height="1079" width="1518" loading="lazy"/></noscript>
+							</a>
+						</div>
+					</div>
+				</div>
+							</div>
+
+						
+			</div>
+</section>
+
+
+<section class="content_1 section__wrapper btn-primary-track"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="row align-items-center ">
+			
+						<div class="col-md-12">
+				<div class="section__container" >
+					<div class="section__content ">
+						<h3 class="h3" style="text-align: center;">Learn more about tracking your airplay</h3>
+						
+													<div class="section__button text-center">
+																	<a class="btn btn-primary" href="https://www.plaympe.com/track/" title="Track music Link" target="_self">Track music</a>	
+									
+															</div>
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+
+<section class="feature_2 section__wrapper testimonial-features pb-0"  >
+	<div class="container">
+		<div class="row ">
+						<div class="col-md-12 mb-5">
+				<div class="section__container">
+					<div class="section__content ">
+						<h2 style="text-align: center;">What our clients are saying</h2>
+<p style="text-align: center;"><a href="https://www.plaympe.com/testimonials/">View all testimonials</a></p>
+					</div>
+				</div>
+			</div>
+						<div class="col-md-12">
+										<div class="row justify-content-center">
+							
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g><path d="M 16,0C 7.164,0,0,7.164,0,16s 7.164,16, 16,16s 16-7.164, 16-16S 24.836,0, 16,0z M 16,30c-7.72,0-14-6.28-14-14s 6.28-14, 14-14 s 14,6.28, 14,14S 23.72,30, 16,30zM 12.814,10.776C 12.64,10.628, 12.484,10.524, 12.348,10.446C 12.342,10.442, 12.338,10.436, 12.332,10.434 c-0.010-0.006-0.020-0.008-0.030-0.012C 12.104,10.312, 11.962,10.26, 11.962,10.26l 0.010,0.024C 11.65,10.152, 11.312,10.058, 10.944,10.058 c-1.628,0-2.946,1.37-2.946,3.060c0,1.69, 1.32,3.060, 2.946,3.060c 0.522,0, 1.004-0.152, 1.43-0.4 c-0.146,1.636-0.97,4.022-3.99,6.454c-0.422,0.342-0.5,0.974-0.172,1.412c 0.192,0.256, 0.478,0.39, 0.766,0.39 c 0.208,0, 0.416-0.068, 0.594-0.212c 3.706-2.99, 4.632-6.062, 4.756-8.114C 14.54,13.084, 13.744,11.704, 13.016,10.984 C 12.95,10.914, 12.888,10.838, 12.814,10.776zM 22.51,10.776c-0.174-0.148-0.33-0.252-0.466-0.33c-0.006-0.004-0.010-0.008-0.016-0.012 c-0.010-0.006-0.020-0.008-0.030-0.012c-0.198-0.108-0.34-0.162-0.34-0.162l 0.010,0.024c-0.322-0.132-0.662-0.226-1.028-0.226 c-1.628,0-2.946,1.37-2.946,3.060c0,1.69, 1.318,3.060, 2.946,3.060c 0.522,0, 1.004-0.152, 1.43-0.4 c-0.146,1.636-0.97,4.022-3.99,6.454c-0.424,0.342-0.5,0.974-0.172,1.412c 0.192,0.256, 0.478,0.39, 0.766,0.39 c 0.208,0, 0.416-0.068, 0.594-0.212c 3.706-2.99, 4.632-6.062, 4.756-8.114c 0.212-2.624-0.586-4.004-1.312-4.724 C 22.646,10.914, 22.584,10.838, 22.51,10.776z"></path></g></svg>
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3C/svg%3E" height="200" width="200" alt="Brian Corona headshot" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/Brian-Corona.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/Brian-Corona.webp" height="200" width="200" alt="Brian Corona headshot" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<p style="text-align: center;">Play MPE is the music industry standard. Their comprehensive lists are a huge component of the go-to partnership tool to reach the radio world, to make a difference. Thank you Play MPE.</p>
+<p style="text-align: center;"><strong>Brian Corona</strong><br />
+Director, Adult Radio Promotion, Atlantic Records / Elektra Records</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g><path d="M 16,0C 7.164,0,0,7.164,0,16s 7.164,16, 16,16s 16-7.164, 16-16S 24.836,0, 16,0z M 16,30c-7.72,0-14-6.28-14-14s 6.28-14, 14-14 s 14,6.28, 14,14S 23.72,30, 16,30zM 12.814,10.776C 12.64,10.628, 12.484,10.524, 12.348,10.446C 12.342,10.442, 12.338,10.436, 12.332,10.434 c-0.010-0.006-0.020-0.008-0.030-0.012C 12.104,10.312, 11.962,10.26, 11.962,10.26l 0.010,0.024C 11.65,10.152, 11.312,10.058, 10.944,10.058 c-1.628,0-2.946,1.37-2.946,3.060c0,1.69, 1.32,3.060, 2.946,3.060c 0.522,0, 1.004-0.152, 1.43-0.4 c-0.146,1.636-0.97,4.022-3.99,6.454c-0.422,0.342-0.5,0.974-0.172,1.412c 0.192,0.256, 0.478,0.39, 0.766,0.39 c 0.208,0, 0.416-0.068, 0.594-0.212c 3.706-2.99, 4.632-6.062, 4.756-8.114C 14.54,13.084, 13.744,11.704, 13.016,10.984 C 12.95,10.914, 12.888,10.838, 12.814,10.776zM 22.51,10.776c-0.174-0.148-0.33-0.252-0.466-0.33c-0.006-0.004-0.010-0.008-0.016-0.012 c-0.010-0.006-0.020-0.008-0.030-0.012c-0.198-0.108-0.34-0.162-0.34-0.162l 0.010,0.024c-0.322-0.132-0.662-0.226-1.028-0.226 c-1.628,0-2.946,1.37-2.946,3.060c0,1.69, 1.318,3.060, 2.946,3.060c 0.522,0, 1.004-0.152, 1.43-0.4 c-0.146,1.636-0.97,4.022-3.99,6.454c-0.424,0.342-0.5,0.974-0.172,1.412c 0.192,0.256, 0.478,0.39, 0.766,0.39 c 0.208,0, 0.416-0.068, 0.594-0.212c 3.706-2.99, 4.632-6.062, 4.756-8.114c 0.212-2.624-0.586-4.004-1.312-4.724 C 22.646,10.914, 22.584,10.838, 22.51,10.776z"></path></g></svg>
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" height="500" width="500" alt="Alan Cross headshot" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/13.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/13.webp" height="500" width="500" alt="Alan Cross headshot" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<p style="text-align: center;">Play MPE continues to make my weekly roundup review of new releases for broadcast, a total breeze. It’s a no-brainer. Play MPE has been the leader for a long time, it’s my preferred way to receive music.</p>
+<p style="text-align: center;"><strong>Alan Cross</strong><br />
+Musicologist/Journalist &#8211; Rock and more, A Journal of Musical Things</p>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-4 mb-lg-0 mb-5">
+									<div class="column">
+																					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g><path d="M 16,0C 7.164,0,0,7.164,0,16s 7.164,16, 16,16s 16-7.164, 16-16S 24.836,0, 16,0z M 16,30c-7.72,0-14-6.28-14-14s 6.28-14, 14-14 s 14,6.28, 14,14S 23.72,30, 16,30zM 12.814,10.776C 12.64,10.628, 12.484,10.524, 12.348,10.446C 12.342,10.442, 12.338,10.436, 12.332,10.434 c-0.010-0.006-0.020-0.008-0.030-0.012C 12.104,10.312, 11.962,10.26, 11.962,10.26l 0.010,0.024C 11.65,10.152, 11.312,10.058, 10.944,10.058 c-1.628,0-2.946,1.37-2.946,3.060c0,1.69, 1.32,3.060, 2.946,3.060c 0.522,0, 1.004-0.152, 1.43-0.4 c-0.146,1.636-0.97,4.022-3.99,6.454c-0.422,0.342-0.5,0.974-0.172,1.412c 0.192,0.256, 0.478,0.39, 0.766,0.39 c 0.208,0, 0.416-0.068, 0.594-0.212c 3.706-2.99, 4.632-6.062, 4.756-8.114C 14.54,13.084, 13.744,11.704, 13.016,10.984 C 12.95,10.914, 12.888,10.838, 12.814,10.776zM 22.51,10.776c-0.174-0.148-0.33-0.252-0.466-0.33c-0.006-0.004-0.010-0.008-0.016-0.012 c-0.010-0.006-0.020-0.008-0.030-0.012c-0.198-0.108-0.34-0.162-0.34-0.162l 0.010,0.024c-0.322-0.132-0.662-0.226-1.028-0.226 c-1.628,0-2.946,1.37-2.946,3.060c0,1.69, 1.318,3.060, 2.946,3.060c 0.522,0, 1.004-0.152, 1.43-0.4 c-0.146,1.636-0.97,4.022-3.99,6.454c-0.424,0.342-0.5,0.974-0.172,1.412c 0.192,0.256, 0.478,0.39, 0.766,0.39 c 0.208,0, 0.416-0.068, 0.594-0.212c 3.706-2.99, 4.632-6.062, 4.756-8.114c 0.212-2.624-0.586-4.004-1.312-4.724 C 22.646,10.914, 22.584,10.838, 22.51,10.776z"></path></g></svg>
+																														<div class="column-img">
+																						 <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" height="500" width="500" alt="Julia Smile headshot" loading="lazy" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/Julia-Smile.webp"/><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/Julia-Smile.webp" height="500" width="500" alt="Julia Smile headshot" loading="lazy"/></noscript>
+										</div>
+																														<div class="column-text">
+											<p style="text-align: center;">Since I discovered MTR, I’ve been able to get an accurate picture of the artists’ songs represented on the radio. You can see the exact number of airplays with the songs of the artists represented on the stations where they are broadcast. The exchanges with the staff are also very pleasant, and the answers come quickly. MTR is a very useful tool for radio promoters, and essential for getting the facts straight with artists.</p>
+<p style="text-align: center;"><strong>Julia Smile</strong><br />
+Radio Promoter, Pistage Radio</p>
+																					</div>
+																				
+									</div>
+								</div>
+														</div>
+								</div>
+		</div>
+			</section>
+
+<section class="content_1 section__wrapper "  >
+	<div class="container">
+		<div class="row align-items-center ">
+			
+						<div class="col-md-12">
+				<div class="section__container" >
+					<div class="section__content ">
+						<h2 style="text-align: center;"><em>Trusted by major labels and curators we all love.</em></h2>
+<p><img decoding="async" class="alignnone wp-image-109 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%2062'%3E%3C/svg%3E" alt="Play MPE Clients" width="2000" height="62" data-lazy-srcset="https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients.webp 2000w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-300x9.webp 300w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-1024x32.webp 1024w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-768x24.webp 768w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-1536x48.webp 1536w" data-lazy-sizes="(max-width: 2000px) 100vw, 2000px" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients.webp" /><noscript><img decoding="async" class="alignnone wp-image-109 size-full" src="https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients.webp" alt="Play MPE Clients" width="2000" height="62" srcset="https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients.webp 2000w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-300x9.webp 300w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-1024x32.webp 1024w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-768x24.webp 768w, https://www.plaympe.com/wp-content/uploads/2024/07/Play-MPE-Clients-1536x48.webp 1536w" sizes="(max-width: 2000px) 100vw, 2000px" /></noscript></p>
+						
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
+
+<section class="feature_2 section__wrapper three-btns cookie-track"  style="background-color: #f7f6f4;">
+	<div class="container">
+		<div class="row ">
+						<div class="col-md-12 mb-5">
+				<div class="section__container">
+					<div class="section__content ">
+						<h2 style="text-align: center;">Ready to do more with your music?</h2>
+					</div>
+				</div>
+			</div>
+						<div class="col-md-12">
+										<div class="row justify-content-center">
+							
+								<div class="col-lg-3 mb-lg-0 col-md-6 mb-md-4 mb-5">
+									<div class="column">
+																																								<div class="column-text">
+											<h3>Promote With Caster</h3>
+<div class="btn-primary-promote"><a class="btn btn-primary" href="https://caster.plaympe.com/#/auth/signup" target="_blank" rel="noopener">Promote music</a></div>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-3 mb-lg-0 col-md-6 mb-md-4 mb-5">
+									<div class="column">
+																																								<div class="column-text">
+											<h3>Track With MTR</h3>
+<div class="btn-primary-track"><a class="btn btn-primary" href="https://mtr.plaympe.com/#/auth/signup" target="_blank" rel="noopener">Track music</a></div>
+																					</div>
+																				
+									</div>
+								</div>
+								
+								<div class="col-lg-3 mb-lg-0 col-md-6 mb-md-4 mb-5">
+									<div class="column">
+																																								<div class="column-text">
+											<h3>Discover With Player</h3>
+<div class="btn-primary-discover"><a class="btn btn-primary" href="https://www.plaympe.com/discover/get-started/" target="_self">Discover music</a></div>
+																					</div>
+																				
+									</div>
+								</div>
+														</div>
+								</div>
+		</div>
+			</section>
+</div><!-- .wrap -->
+</div><!-- .site-content -->
+</main>
+<footer class="site-footer" role="contentinfo">
+            <div class="container top">
+            <div class="row">
+            <div class="col-12 col-lg-6 left">
+                                    <div class="footer-widget-container" >
+                        <div class="widget_text footer-area footer-area-one col-md-12"><div><div class="textwidget custom-html-widget"><div class="row">
+	<div class="col-12 col-md-4">
+		<ul>
+			<li><a href="https://www.plaympe.com/promote/">Promote with Caster</a>			</li>
+			<li><a href="https://www.plaympe.com/discover/">Discover with Player</a>			</li>
+			<li><a href="https://www.plaympe.com/track/">Track with MTR</a></li>
+		</ul>
+		</div>
+	<div class="col-12 col-md-4">
+		<div class="h3">Company</div>
+		<ul>
+			<li><a href="https://www.plaympe.com/about/">About</a></li>
+			<li><a href="https://investors.dsny.com/" target="_blank" rel="noopener">Investors</a></li>
+			<li><a href="https://www.linkedin.com/company/play-mpe" target="_blank" rel="noopener">Careers</a></li>
+			<li><a href="https://www.plaympe.com/testimonials/">Testimonials</a></li>
+		</ul>
+	</div>
+	<div class="col-12 col-md-4">
+		<div class="h3">Resources</div>
+		<ul>
+			<li><a href="https://www.plaympe.com/blog/">Blog</a></li>
+			<li><a href="https://www.plaympe.com/charts/">Charts</a></li>
+			<li><a href="mailto:info@plaympe.com">Contact</a></li>
+			<li><a href="https://support.plaympe.com/portal/en/kb/plaympe" target="_blank" rel="noopener">Support</a></li>
+		</ul>
+	</div>
+</div></div></div></div>                    </div>
+                            </div>
+            <div class="col-12 col-lg-3 right">
+                                            <div class="footer-widget-container" >
+                            <div class="widget_text footer-area footer-area-one col-md-12"><div><div class="textwidget custom-html-widget"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20248%2045'%3E%3C/svg%3E" alt="Play MPE logo" width="248px" height="45px" data-lazy-src="https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo-white.webp"><noscript><img src="https://www.plaympe.com/wp-content/uploads/2024/07/plaympe-logo-white.webp" alt="Play MPE logo" width="248px" height="45px"></noscript>
+<div class="h3">Follow us</div>
+<ul class="social-list">
+	<li>
+		<a href="https://www.youtube.com/user/PlayMPE/" target="_blank" title="YouTube" aria-label="YouTube - opens in new window" rel="noopener">
+			<svg xmlns="https://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewbox="0 0 50 50"><path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"></path></svg>
+		</a>
+	</li>
+	<li>
+		<a href="https://www.linkedin.com/company/play-mpe/" target="_blank" title="LinkedIn" aria-label="LinkedIn - opens in new window" rel="noopener">
+			<svg xmlns="https://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewbox="0 0 16 16"><path d="M 2.757813 1 C 1.792969 1 1 1.792969 1 2.757813 L 1 12.246094 C 1 13.207031 1.792969 14 2.757813 14 L 12.246094 14 C 13.207031 14 14 13.207031 14 12.246094 L 14 2.757813 C 14 1.792969 13.207031 1 12.246094 1 Z M 2.757813 2 L 12.246094 2 C 12.667969 2 13 2.332031 13 2.757813 L 13 12.246094 C 13 12.667969 12.667969 13 12.246094 13 L 2.757813 13 C 2.332031 13 2 12.667969 2 12.246094 L 2 2.757813 C 2 2.332031 2.332031 2 2.757813 2 Z M 4 3 C 3.449219 3 3 3.449219 3 4 C 3 4.550781 3.449219 5 4 5 C 4.550781 5 5 4.550781 5 4 C 5 3.449219 4.550781 3 4 3 Z M 3 6 L 3 12 L 5 12 L 5 6 Z M 6 6 L 6 12 L 8 12 L 8 9.320313 C 8 8.488281 8.078125 7.742188 9.078125 7.742188 C 10.0625 7.742188 10 8.636719 10 9.375 L 10 12 L 12 12 L 12 9.039063 C 12 7.320313 11.640625 6 9.691406 6 C 8.753906 6 8.28125 6.375 8.023438 6.875 L 8 6.875 L 8 6 Z"></path>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a href="https://twitter.com/PlayMPE" target="_blank" title="Twitter" aria-label="Twitter - opens in new window" rel="noopener">
+			<svg xmlns="https://www.w3.org/2000/svg"  viewbox="0 0 50 50" width="50px" height="50px"><path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"/></svg>
+		</a>
+	</li>
+	<li>
+			<a href="https://www.facebook.com/plaympe" target="_blank" title="Facebook" aria-label="Facebook - opens in new window" rel="noopener">
+			<svg xmlns="https://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewbox="0 0 24 24"><path d="M16.403,9H14V7c0-1.032,0.084-1.682,1.563-1.682h0.868c0.552,0,1-0.448,1-1V3.064c0-0.523-0.401-0.97-0.923-1.005 C15.904,2.018,15.299,1.999,14.693,2C11.98,2,10,3.657,10,6.699V9H8c-0.552,0-1,0.448-1,1v2c0,0.552,0.448,1,1,1l2-0.001V21 c0,0.552,0.448,1,1,1h2c0.552,0,1-0.448,1-1v-8.003l2.174-0.001c0.508,0,0.935-0.381,0.993-0.886l0.229-1.996 C17.465,9.521,17.001,9,16.403,9z"></path>					</svg>
+		</a>
+	</li>
+</ul></div></div></div>                        </div>
+                                </div>
+            </div>
+        </div>
+    
+    <div class="copyright w-100 bottom" id="copyright" aria-label="copyright_info">
+                    <div class="footer-widget-container" >
+                <div class="widget_text footer-area footer-area-one col-md-12"><div><div class="textwidget custom-html-widget"><div class="container">
+	<div class="row">
+		<div class="col-12 col-md-6">
+			<p>Copyright &copy; 2024 All Rights Reserved. <a href="https://www.plaympe.com/terms-of-service/">Terms & Conditions</a> | <a href="https://www.plaympe.com/privacy/">Privacy</a></p>
+		</div>
+	</div>
+</div></div></div></div>            </div>
+            </div>
+</footer><!-- .site-footer -->
+
+<div class="modal fade" id="signin-popup" tabindex="-1" role="" aria-hidden="true" aria-labelledby="signin-popup">
+    <div class="modal-dialog" role="">
+        <div class="modal-content">
+            <div class="modal-body">     
+                                    <div class="widget_text "><div class="textwidget custom-html-widget"><div class="container">
+	<div class="row">
+		<button type="button" class="close close-modal" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">back</span></button>
+		<div class="col-12 col-lg 4 modal-col btn-primary-promote">
+			<div>
+				<div class="h3">Sign in to Caster</div>
+				<p>Promote Music</p>
+			</div>
+			<a class="btn btn-primary caster_signin_menu_button" href="https://encoder.plaympe.com/#/signin" target="_blank" rel="noopener">Sign In</a>
+		</div>
+		<div class="col-12 col-lg 4 modal-col btn-primary-track">
+			<div>
+				<div class="h3">Sign in to MTR</div>
+				<p>Track Music</p>
+			</div>
+			<a class="btn btn-primary mtr_signin_menu_button" href="https://mtr.plaympe.com/#/auth/signin" target="_blank" rel="noopener">Sign In</a>
+		</div>
+		<div class="col-12 col-lg 4 modal-col btn-primary-discover">
+			<div>
+				<div class="h3">Sign in to Player</div>
+				<p>Discover Music</p>
+			</div>
+			<a class="btn btn-primary player_signin_menu_button" href="https://player.plaympe.com/" target="_blank" rel="noopener">Sign In</a>
+		</div>
+	</div>
+</div></div></div>                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="getstarted-popup" tabindex="-1" role="" aria-hidden="true" aria-labelledby="getstarted-popup">
+    <div class="modal-dialog" role="">
+        <div class="modal-content">
+            <div class="modal-body">
+                                    <div class="widget_text "><div class="textwidget custom-html-widget"><div class="container">
+	<div class="row">
+		<button type="button" class="close close-modal" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">back</span></button>
+		<div class="col-12 col-lg 4 modal-col btn-primary-promote">
+			<div>
+				<div class="h3">Promote with Caster</div>
+				<p>Connect with one of our music industry relations reps to request a demo Caster.</p>
+				<a class="btn btn-primary cookie-track" href="https://caster.plaympe.com/#/auth/signup" target="_blank" rel="noopener">Promote Music</a>
+			</div>
+		</div>
+		<div class="col-12 col-lg 4 modal-col btn-primary-track">
+			<div>
+				<div class="h3">Track with MTR</div>
+				<p>Track your radio airplay with MTR. Sign up is free, pay when you start tracking.</p>
+				<a class="btn btn-primary cookie-track" href="https://mtr.plaympe.com/#/auth/signup" target="_blank" rel="noopener">Track Music</a>
+			</div>
+		</div>
+		<div class="col-12 col-lg 4 modal-col btn-primary-discover">
+			<div>
+				<div class="h3">Discover with Player</div>
+				<p>Request access to become a verified curator and join the Player community.</p>
+				<a class="btn btn-primary cookie-track" href="https://www.plaympe.com/discover/get-started/">Discover Music</a>
+			</div>
+		</div>
+	</div>
+</div></div></div>                            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script id="ckyBannerTemplate" type="text/template"><div class="cky-overlay cky-hide"></div><div class="cky-btn-revisit-wrapper cky-revisit-hide" data-cky-tag="revisit-consent" data-tooltip="Consent Preferences" style="background-color:#0056a7"> <button class="cky-btn-revisit" aria-label="Consent Preferences"> <img src="https://www.plaympe.com/wp-content/plugins/cookie-law-info/lite/frontend/images/revisit.svg" alt="Revisit consent button"> </button></div><div class="cky-consent-container cky-hide" tabindex="0"> <div class="cky-consent-bar" data-cky-tag="notice" style="background-color:#FFFFFF;border-color:#f4f4f4;color:#212121">  <div class="cky-notice"> <p class="cky-title" role="heading" aria-level="1" data-cky-tag="title" style="color:#212121">We value your privacy</p><div class="cky-notice-group"> <div class="cky-notice-des" data-cky-tag="description" style="color:#212121"> <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p> </div><div class="cky-notice-btn-wrapper" data-cky-tag="notice-buttons"> <button class="cky-btn cky-btn-customize" aria-label="Customize" data-cky-tag="settings-button" style="color:#1863dc;background-color:transparent;border-color:#1863dc">Customize</button> <button class="cky-btn cky-btn-reject" aria-label="Reject All" data-cky-tag="reject-button" style="color:#1863dc;background-color:transparent;border-color:#1863dc">Reject All</button> <button class="cky-btn cky-btn-accept" aria-label="Accept All" data-cky-tag="accept-button" style="color:#FFFFFF;background-color:#1863dc;border-color:#1863dc">Accept All</button>  </div></div></div></div></div><div class="cky-modal" tabindex="0"> <div class="cky-preference-center" data-cky-tag="detail" style="color:#212121;background-color:#FFFFFF;border-color:#F4F4F4"> <div class="cky-preference-header"> <span class="cky-preference-title" role="heading" aria-level="1" data-cky-tag="detail-title" style="color:#212121">Customize Consent Preferences</span> <button class="cky-btn-close" aria-label="[cky_preference_close_label]" data-cky-tag="detail-close"> <img src="https://www.plaympe.com/wp-content/plugins/cookie-law-info/lite/frontend/images/close.svg" alt="Close"> </button> </div><div class="cky-preference-body-wrapper"> <div class="cky-preference-content-wrapper" data-cky-tag="detail-description" style="color:#212121"> <p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p><p>The cookies that are categorized as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. </p><p>We also use third-party cookies that help us analyze how you use this website, store your preferences, and provide the content and advertisements that are relevant to you. These cookies will only be stored in your browser with your prior consent.</p><p>You can choose to enable or disable some or all of these cookies but disabling some of them may affect your browsing experience.</p> </div><div class="cky-accordion-wrapper" data-cky-tag="detail-categories"> <div class="cky-accordion" id="ckyDetailCategorynecessary"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Necessary" data-cky-tag="detail-category-title" style="color:#212121">Necessary</button><span class="cky-always-active">Always Active</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchnecessary"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#212121"> <p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p></div> </div> </div> <div class="cky-accordion-body"> <div class="cky-audit-table" data-cky-tag="audit-table" style="color:#212121;background-color:#f4f4f4;border-color:#ebebeb"><p class="cky-empty-cookies-text">No cookies to display.</p></div> </div> </div><div class="cky-accordion" id="ckyDetailCategoryfunctional"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Functional" data-cky-tag="detail-category-title" style="color:#212121">Functional</button><span class="cky-always-active">Always Active</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchfunctional"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#212121"> <p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p></div> </div> </div> <div class="cky-accordion-body"> <div class="cky-audit-table" data-cky-tag="audit-table" style="color:#212121;background-color:#f4f4f4;border-color:#ebebeb"><p class="cky-empty-cookies-text">No cookies to display.</p></div> </div> </div><div class="cky-accordion" id="ckyDetailCategoryanalytics"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Analytics" data-cky-tag="detail-category-title" style="color:#212121">Analytics</button><span class="cky-always-active">Always Active</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchanalytics"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#212121"> <p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p></div> </div> </div> <div class="cky-accordion-body"> <div class="cky-audit-table" data-cky-tag="audit-table" style="color:#212121;background-color:#f4f4f4;border-color:#ebebeb"><p class="cky-empty-cookies-text">No cookies to display.</p></div> </div> </div><div class="cky-accordion" id="ckyDetailCategoryperformance"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Performance" data-cky-tag="detail-category-title" style="color:#212121">Performance</button><span class="cky-always-active">Always Active</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchperformance"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#212121"> <p>Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p></div> </div> </div> <div class="cky-accordion-body"> <div class="cky-audit-table" data-cky-tag="audit-table" style="color:#212121;background-color:#f4f4f4;border-color:#ebebeb"><p class="cky-empty-cookies-text">No cookies to display.</p></div> </div> </div><div class="cky-accordion" id="ckyDetailCategoryadvertisement"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Advertisement" data-cky-tag="detail-category-title" style="color:#212121">Advertisement</button><span class="cky-always-active">Always Active</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchadvertisement"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#212121"> <p>Advertisement cookies are used to provide visitors with customized advertisements based on the pages you visited previously and to analyze the effectiveness of the ad campaigns.</p></div> </div> </div> <div class="cky-accordion-body"> <div class="cky-audit-table" data-cky-tag="audit-table" style="color:#212121;background-color:#f4f4f4;border-color:#ebebeb"><p class="cky-empty-cookies-text">No cookies to display.</p></div> </div> </div> </div></div><div class="cky-footer-wrapper"> <span class="cky-footer-shadow"></span> <div class="cky-prefrence-btn-wrapper" data-cky-tag="detail-buttons"> <button class="cky-btn cky-btn-reject" aria-label="Reject All" data-cky-tag="detail-reject-button" style="color:#1863dc;background-color:transparent;border-color:#1863dc"> Reject All </button> <button class="cky-btn cky-btn-preferences" aria-label="Save My Preferences" data-cky-tag="detail-save-button" style="color:#1863dc;background-color:transparent;border-color:#1863dc"> Save My Preferences </button> <button class="cky-btn cky-btn-accept" aria-label="Accept All" data-cky-tag="detail-accept-button" style="color:#ffffff;background-color:#1863dc;border-color:#1863dc"> Accept All </button> </div></div></div></div></script><script type="rocketlazyloadscript" data-minify="1" src="https://www.plaympe.com/wp-content/cache/min/1/130993.js?ver=1738365779" defer></script>
+<!-- Segment Code Start -->
+<script type="rocketlazyloadscript" async>
+ setTimeout(function(){!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="3nhGFaTqc0E2TI9vcI3uLdulBSrjSgoV";;analytics.SNIPPET_VERSION="4.15.3";
+  analytics.load("3nhGFaTqc0E2TI9vcI3uLdulBSrjSgoV");
+  analytics.page();
+  }}();}, 5000);
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+    var $zoho = $zoho || {};
+    $zoho.salesiq = $zoho.salesiq || {
+        mode: "async",
+        widgetcode: "97f5103d98cc18bf3e2168529226f0a946afde1b214fa7387daab134e29b7c68ca22130afbdb5862fc1a0c597ee09f48",
+        values: {},
+        ready: function() {}
+    };
+    var d = document;
+    s = d.createElement("script");
+    s.type = "text/javascript";
+    s.id = "zsiqscript";
+    s.defer = true;
+    s.src = "https://salesiq.zoho.com/widget";
+    t = d.getElementsByTagName("script")[0];
+    t.parentNode.insertBefore(s, t);
+    d.write("<div id='zsiqwidget'></div>");
+</script><script type="rocketlazyloadscript">
+const currentPage = location.href;
+const allAs = document.querySelectorAll('a.nav-link');
+const allAsLength = allAs.length
+
+for (let i = 0; i < allAsLength; i++) {
+  if ( allAs[i].href === currentPage ) {
+    allAs[i].className = "nav-link current-menu-item";
+  }
+}
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|(\/[^\/]+)?\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.plaympe.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.plaympe.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.plaympe.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://www.plaympe.com/wp-content/cache/min/1/wp-content/themes/cybermark/assets/dist/js/main.js?ver=1738365779" id="cm-bootstrap-script-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" defer src="https://www.plaympe.com/wp-content/cache/min/1/wp-content/themes/plaympe/assets/dist/js/main.js?ver=1738365779" id="cybermark-script-js"></script>
+<script type="rocketlazyloadscript">
+		function toggleRegion() {
+			var image = document.getElementById("globe-image");
+			var list = document.getElementById("region-list");
+			console.log(list);
+			if (list.style.display === "none") {
+				list.style.display = "block";
+			} else {
+				list.style.display = "none";
+			}
+		} 
+	</script><script type="rocketlazyloadscript" async>window.addEventListener('DOMContentLoaded', function() {
+		$(document).ready(function() {
+			$("a.cookie-track").click(function() {
+				// Get the current URL parameters
+				const utms = new URLSearchParams(window.location.search);
+				
+
+				// Convert URL parameters to an object
+				let utmsObj = {};
+				utms.forEach((value, key) => {
+					utmsObj[key] = value;
+				});
+
+				// Convert the object to a JSON string
+				const utmsJSON = JSON.stringify(utmsObj);
+
+				// Function to set cookie
+				function setCookie(name, value, days) {
+					const date = new Date();
+					date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+					const expires = "; expires=" + date.toUTCString();
+					document.cookie = name + "=" + value + expires + "; domain=.plaympe.com;path=/";
+				}
+
+				// Function to get the cookie by name
+				function getCookie(name) {
+					let nameEQ = name + "=";
+					let cookies = document.cookie.split(";");
+					for (let i = 0; i < cookies.length; i++) {
+						let cookie = cookies[i];
+						while (cookie.charAt(0) === " ") cookie = cookie.substring(1, cookie.length);
+						if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length, cookie.length);
+					}
+					return null;
+				}
+
+				// Function to delete cookie
+				function deleteCookie(name) {
+					document.cookie = name + "=; Max-Age=-99999999; path=/";
+				}
+
+				// Check if the cookie exists
+				const existingCookie = getCookie("mpe_utm");
+
+				// If the cookie exists, delete it
+				if (existingCookie) {
+					deleteCookie("mpe_utm");
+				}
+
+				// Store the JSON string as a cookie
+				setCookie("mpe_utm", utmsJSON, 30);
+			});
+
+			$(".section__wrapper.cookie-track .btn").click(function() {
+				// Get the current URL parameters
+				const utms = new URLSearchParams(window.location.search);
+				
+
+				// Convert URL parameters to an object
+				let utmsObj = {};
+				utms.forEach((value, key) => {
+					utmsObj[key] = value;
+				});
+
+				// Convert the object to a JSON string
+				const utmsJSON = JSON.stringify(utmsObj);
+
+				// Function to set cookie
+				function setCookie(name, value, days) {
+					const date = new Date();
+					date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+					const expires = "; expires=" + date.toUTCString();
+					document.cookie = name + "=" + value + expires + "; domain=.plaympe.com;path=/";
+				}
+
+				// Function to get the cookie by name
+				function getCookie(name) {
+					let nameEQ = name + "=";
+					let cookies = document.cookie.split(";");
+					for (let i = 0; i < cookies.length; i++) {
+						let cookie = cookies[i];
+						while (cookie.charAt(0) === " ") cookie = cookie.substring(1, cookie.length);
+						if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length, cookie.length);
+					}
+					return null;
+				}
+
+				// Function to delete cookie
+				function deleteCookie(name) {
+					document.cookie = name + "=; Max-Age=-99999999; path=/";
+				}
+
+				// Check if the cookie exists
+				const existingCookie = getCookie("mpe_utm");
+
+				// If the cookie exists, delete it
+				if (existingCookie) {
+					deleteCookie("mpe_utm");
+				}
+
+				// Store the JSON string as a cookie
+				setCookie("mpe_utm", utmsJSON, 30);
+			});
+		});
+	});</script>				
+				 <script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+				jQuery(document).ready(function($) {
+				//Gallery slider
+				$('.gallery__slider_1').slick({
+				    slidesToShow: 1,
+					infinite: false,
+				    slidesToScroll: 1,
+				    autoplay: false,
+				    arrows: true,
+				    dots: true,
+					adaptiveHeight: true,
+				    prevArrow:"<button type='button' class='slick-prev pull-left' aria-label='navigate to the left'><svg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'><g><g><path d='M123.6,270.1l236.8,236.2c7.8,7.7,20.3,7.7,28.1,0c7.7-7.8,7.7-20.3,0-28.1L165.7,256L388.4,33.9c7.8-7.7,7.8-20.3,0-28.1c-3.9-3.9-9-5.8-14.1-5.8c-5.1,0-10.1,1.9-14,5.8L123.6,242c-3.7,3.7-5.8,8.8-5.8,14.1C117.7,261.3,119.8,266.3,123.6,270.1z'/></g></g></svg></button>",
+					nextArrow:"<button type='button' class='slick-next pull-right' aria-label='navigate to the right'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 512.002 512.002' style='enable-background:new 0 0 512.002 512.002;' xml:space='preserve'> <g> <g> <path d='M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105 L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795 l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z'/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>",
+				    responsive: [
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1,
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+				    ]
+				});
+				});
+				 });</script>
+
+				 				
+				 <script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+				jQuery(document).ready(function($) {
+				//Gallery slider
+				$('.gallery__slider_2').slick({
+				    slidesToShow: 1,
+					infinite: false,
+				    slidesToScroll: 1,
+				    autoplay: false,
+				    arrows: true,
+				    dots: true,
+					adaptiveHeight: true,
+				    prevArrow:"<button type='button' class='slick-prev pull-left' aria-label='navigate to the left'><svg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'><g><g><path d='M123.6,270.1l236.8,236.2c7.8,7.7,20.3,7.7,28.1,0c7.7-7.8,7.7-20.3,0-28.1L165.7,256L388.4,33.9c7.8-7.7,7.8-20.3,0-28.1c-3.9-3.9-9-5.8-14.1-5.8c-5.1,0-10.1,1.9-14,5.8L123.6,242c-3.7,3.7-5.8,8.8-5.8,14.1C117.7,261.3,119.8,266.3,123.6,270.1z'/></g></g></svg></button>",
+					nextArrow:"<button type='button' class='slick-next pull-right' aria-label='navigate to the right'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 512.002 512.002' style='enable-background:new 0 0 512.002 512.002;' xml:space='preserve'> <g> <g> <path d='M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105 L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795 l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z'/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>",
+				    responsive: [
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1,
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+				    ]
+				});
+				});
+				 });</script>
+
+				 				
+				 <script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+				jQuery(document).ready(function($) {
+				//Gallery slider
+				$('.gallery__slider_3').slick({
+				    slidesToShow: 1,
+					infinite: false,
+				    slidesToScroll: 1,
+				    autoplay: false,
+				    arrows: true,
+				    dots: true,
+					adaptiveHeight: true,
+				    prevArrow:"<button type='button' class='slick-prev pull-left' aria-label='navigate to the left'><svg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'><g><g><path d='M123.6,270.1l236.8,236.2c7.8,7.7,20.3,7.7,28.1,0c7.7-7.8,7.7-20.3,0-28.1L165.7,256L388.4,33.9c7.8-7.7,7.8-20.3,0-28.1c-3.9-3.9-9-5.8-14.1-5.8c-5.1,0-10.1,1.9-14,5.8L123.6,242c-3.7,3.7-5.8,8.8-5.8,14.1C117.7,261.3,119.8,266.3,123.6,270.1z'/></g></g></svg></button>",
+					nextArrow:"<button type='button' class='slick-next pull-right' aria-label='navigate to the right'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 512.002 512.002' style='enable-background:new 0 0 512.002 512.002;' xml:space='preserve'> <g> <g> <path d='M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105 L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795 l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z'/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></button>",
+				    responsive: [
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1,
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+				    ]
+				});
+				});
+				 });</script>
+
+				 <script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.plaympe.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script type="rocketlazyloadscript">
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('.content_1 img, .feature_2 img');
+        images.forEach((img) => {
+            img.setAttribute('loading', 'lazy');
+        });
+    });
+</script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
